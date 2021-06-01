@@ -18,7 +18,7 @@ public class StartController {
 
     @FXML
     private void initialize(){
-        playerName.setText(System.getProperty("user.name"));
+        playerName.setText(System.getProperty("name"));
     }
 
     /**
