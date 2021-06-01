@@ -35,6 +35,7 @@ public class StartController {
             Logger.warn("Player name cannot be null!");
             errorLabel.setText("Player Name is required to start the game!");
         } else if(playerName.getText().isBlank()){
+            Logger.warn("Player name cannot be just whitespaces");
             errorLabel.setText("Player Name must contain characters!");
         }
         else {
