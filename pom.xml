@@ -1,34 +1,83 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>hu.unideb.inf</groupId>
-    <artifactId>homework-template-project</artifactId>
+    <artifactId>rolling-cubes</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
-    <description></description>
+    <description>Puzzle game implemented in JavaFX based on the Model-View-Controller (MVC) architectural pattern.</description>
     <developers>
         <developer>
-            <name></name>
-            <email></email>
+            <name>Oualid</name>
+            <email>oualidezzoubeidi@gmail.com</email>
             <organization>Faculty of Informatics, University of Debrecen</organization>
             <organizationUrl>https://inf.unideb.hu/</organizationUrl>
         </developer>
     </developers>
     <scm>
-        <developerConnection>scm:git:https://github.com/INBPM0420/homework-template-project.git</developerConnection>
+        <developerConnection>scm:git:https://github.com/INBPM0420/rolling-cubes.git</developerConnection>
     </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.outputEncoding>UTF-8</project.build.outputEncoding>
         <maven.compiler.release>16</maven.compiler.release>
-        <exec.mainClass>remove.me.RemoveThisClass</exec.mainClass>
+        <exec.mainClass>coingame.javafx.Main</exec.mainClass>
+        <exec.cleanupDaemonThreads>false</exec.cleanupDaemonThreads>
         <javafx.version>16</javafx.version>
         <junit.jupiter.version>5.7.1</junit.jupiter.version>
         <jacoco.version>0.8.7</jacoco.version>
         <surefire.version>3.0.0-M5</surefire.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>org.tinylog</groupId>
+            <artifactId>tinylog-api</artifactId>
+            <version>2.3.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.tinylog</groupId>
+            <artifactId>tinylog-impl</artifactId>
+            <version>2.3.1</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.200</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.4.31.Final</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>5.0.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.inject.extensions</groupId>
+            <artifactId>guice-persist</artifactId>
+            <version>5.0.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.gluonhq</groupId>
+            <artifactId>ignite-guice</artifactId>
+            <version>1.2.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.12.0</version>
+            <scope>compile</scope>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -136,6 +185,15 @@
                 </dependencies>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <filters>
+            <filter>db.properties</filter>
+        </filters>
     </build>
     <reporting>
         <plugins>

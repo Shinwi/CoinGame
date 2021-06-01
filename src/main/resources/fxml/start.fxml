@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coingame.javafx.controllers.StartController">
+   <bottom>
+      <Button fx:id="play" mnemonicParsing="false" onAction="#handlePlayButton" text="Play" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </bottom>
+   <center>
+      <SplitPane dividerPositions="0.5" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <items>
+            <VBox alignment="CENTER_LEFT" prefHeight="348.0" prefWidth="263.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Player Name">
+                     <VBox.margin>
+                        <Insets left="60.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="playerName" maxWidth="200.0">
+                     <VBox.margin>
+                        <Insets left="5.0" />
+                     </VBox.margin>
+                  </TextField>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+            <TextArea text="&#10;&#10;     Game Rules:&#10;The Goal is to move each coin to the corner&#10;to a corner cell.&#10;&#10;Coins can move horizontally or vertically by&#10;1,2, or 3 cells.&#10;&#10;Coin can move only if it is next to at least&#10;one other coin. And only if its target cell&#10;is empty.">
+               <font>
+                  <Font size="14.0" />
+               </font></TextArea>
+         </items>
+      </SplitPane>
+   </center>
+</BorderPane>
