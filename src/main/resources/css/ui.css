@@ -1,7 +1,7 @@
 .square {
-    -fx-border-style: solid;
+    -fx-border-style: solid ;
 }
 
 .square:hover {
-    -fx-background-color: whitesmoke;
+    -fx-background-color: darkgrey;
 }

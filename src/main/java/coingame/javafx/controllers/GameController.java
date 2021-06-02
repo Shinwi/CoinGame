@@ -53,13 +53,19 @@ public class GameController {
 
     //creates Squares
     private StackPane createSquare(int row, int col){
-        var square = new StackPane();
-        square.getStyleClass().add("square");
-       // var coin = new Circle(50);
+            var square = new StackPane();
+            square.getStyleClass().add("square");
+            //creating the coin we need
+            if( (row==1||row==2) && (col==1||col==2)){
+                var coin = new Circle(40);
+                coin.setFill(Color.RED);
+                square.getChildren().add(coin);
+            }
 
-        return square;
+            return square;
     }
 
+    //sets the player's name to the name given in the start scene
     public void setName(String name){
         Logger.info("Setting name to {}",name);
         this.name = name;
